@@ -38,15 +38,15 @@ stop_list = set(stopwords.words('english'))
 # +
 # Declaring variables for file path
 in_path = '.'
-doc_source = '../dataset/cran.all.1400.txt'
-out_path = 'preprocessed_cranfieldDocs'
+doc_source = '../Dataset/cran.all.1400.txt'
+out_path = '../preprocessed_cranfieldDocs'
 
 # Declaring variables for query files
-query = 'Datase/cran.qry.txt'
-preproc_query = 'preprocessed_queries.txt'
+query = '../Dataset/cran.qry.txt'
+preproc_query = '../preprocessed_cranfieldDocs/preprocessed_queries.txt'
 
 # Declaring variable for file with query relevance values
-relevance = 'Dataset/cranqrel.txt'
+relevance = '../Dataset/cranqrel.txt'
 
 # Checking if the preprocessed docs folder exists already
 if not os.path.isdir(out_path):
