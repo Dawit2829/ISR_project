@@ -529,7 +529,6 @@ def calculate_fscore(k):
 # for top 50 docs
 calculate_precision(no_of_top)
 
-# -
 np.mean(calculate_precision(no_of_top))
 
 """This cell might take about 40 seconds to run."""
