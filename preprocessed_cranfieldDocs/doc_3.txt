@@ -1,1 +1,1 @@
-boundari layer simpl shear flow past flat plate boundari layer simpl shear flow past flat plate boundari layer equat present steadi incompress flow pressur gradient
+boundary layer simple shear flow past flat plate boundary layer simple shear flow past flat plate boundary layer equation present steady incompressible flow pressure gradient

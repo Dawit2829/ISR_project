@@ -1,1 +1,1 @@
-note laminar boundari layer circular cylind axial incompress flow note laminar boundari layer circular cylind axial incompress flow correct made equat comput ratio displac thick cylind correspond thick flat plate
+note laminar boundary layer circular cylinder axial incompressible flow note laminar boundary layer circular cylinder axial incompressible flow correction make equation compute ratio displacement thickness cylinder correspond thickness flat plate

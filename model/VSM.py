@@ -25,10 +25,11 @@ import pandas as pd
 import numpy as np
 import re # for regular expressions
 import nltk
-nltk.download('stopwords') 
+nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
 nltk.download('averaged_perceptron_tagger')
+nltk.download('averaged_perceptron_tagger_eng')
 import math as m 
 from collections import Counter
 from bs4 import BeautifulSoup
@@ -235,10 +236,6 @@ with open(preproc_query, 'w', encoding='utf-8') as new_q:
 
 # total number of documents is 1400
 no_of_docs = len(all_docs)
-print(no_of_docs)
-
-
-#  Calculating df values for each term in the vocabulary
 
 # create a dictionary of key-value pairs where tokens are keys and their occurence in the corpus the value
 DF = {}
