@@ -1,0 +1,1 @@
+note converg numer solut navier stoke equat note converg numer solut navier stoke equat criterion given converg numer solut navier stoke equat two dimens steadi condit criterion appli case steadi viscou flow two dimens show local mesh reynold number base size mesh use solut exce certain fix valu numer solut converg

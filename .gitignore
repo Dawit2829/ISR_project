@@ -1,8 +1,3 @@
 .vscode/
 .venv/
 .venv-1/
-Dataset/*.txt
-
-!Dataset/cran.all.1400.txt
-!Dataset/cranqrel.txt
-!Dataset/cran.qry.txt
