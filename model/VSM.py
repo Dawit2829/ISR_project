@@ -209,7 +209,6 @@ def parse_cranfield_queries(filepath):
 """This cell might take about 20 seconds to run."""
 docs = parse_cranfield_docs(doc_source)
 all_docs = []
-
 for doc in docs:
     preprocessed_text = tokenize(doc['title'] + ' ' + doc['text'])
     all_docs.append(preprocessed_text)
@@ -231,15 +230,10 @@ with open(preproc_query, 'w', encoding='utf-8') as new_q:
         else:
             new_q.write(query_tokens)
 
-# The corpus is already loaded into all_docs from the Cranfield parser above.
-# The preprocessed files in out_path were written for inspection only.
-
-# total number of documents is 1400
 no_of_docs = len(all_docs)
 
 # create a dictionary of key-value pairs where tokens are keys and their occurence in the corpus the value
 DF = {}
-
 for i in range(no_of_docs):
     tokens = all_docs[i].split()
     for w in set(tokens):
@@ -249,18 +243,10 @@ for i in range(no_of_docs):
 for i in DF:
     # convert to number of occurences of the token from list of documents where token occurs
     DF[i] = len(DF[i])
-# -
-
-print(DF)
 
 # count number of unique words in the corpus
 vocab_size = len(DF)
-print(vocab_size)
-
-# create vocabulary list of all unique words
 vocab = [term for term in DF]
-print(vocab)
-
 doc = 0
 
 # creating dictionary to store tf-idf values for each term in the vocabulary
@@ -305,9 +291,6 @@ for token in counter:
     print(f"Term: {token}")
     print(f"TF: {round(tf, 6)} | IDF: {round(idf, 6)} | TF-IDF: {round(tfidf, 6)}\n")
 
-
-# ## Forming document vectors using the tf-idf values
-
 # initializing empty vector of vocabulary size
 D = np.zeros((no_of_docs, vocab_size))
 
@@ -315,9 +298,6 @@ D = np.zeros((no_of_docs, vocab_size))
 for i in tf_idf:
     ind = vocab.index(i[1])
     D[i[0]][ind] = tf_idf[i]
-
-# len(D)
-print(D)
 
 def gen_vector(tokens):
     """To create a vector (with repsect to the vocabulary) of the tokens passed as input
@@ -347,12 +327,7 @@ def gen_vector(tokens):
         except:
             pass
     return Q
-
-
-# # Task 2
-
-# ## Calculating cosine similarity between each query vectors and document vectors
-
+# calculating cosine similarity between query and corpus of documents
 def cosine_sim(x, y):
     """To calculate cosine similarity between 2 vectors.
     
@@ -371,7 +346,7 @@ def cosine_sim(x, y):
     
     return cos_sim
 
-
+# calculating cosine similarity between query and corpus of documents to generate ranked list of top k documents in descending order of their cosine similarity with the query
 def cosine_similarity(k, query):
     """To determine a ranked list of top k documents in descending order of their
     cosine similarity with the query
@@ -432,7 +407,7 @@ def list_of_docs(k):
 
 
 #to get list of all documents
-no_of_top=0
+no_of_top= 0
 list_of_docs(no_of_top)
 
 # ## Calculating precision and recall values for each query
@@ -455,9 +430,6 @@ for i in range(1, len(queries) + 1):
     query_rel.append(rel_list)
 print(query_rel)
 
-
-# -
-
 def intersection(lst1, lst2): 
     """To count number of common items between 2 lists
     
@@ -471,16 +443,10 @@ def intersection(lst1, lst2):
     lst3 = [value for value in lst1 if value in lst2] 
     return len(lst3) 
 
+top = [10, 50]
 
-# +
-top = [10, 50, 100, 500]
-
-# for top 100 docs
-no_of_top = top[2]
-no_of_top
-
-
-# -
+# for top 50 docs
+no_of_top = top[1]
 
 def calculate_recall(k):
     """To generate list of recall values for each query for given value of k
@@ -506,14 +472,11 @@ def calculate_recall(k):
             r = a / b
         recall.append(r)
     return recall   
-# for top 100 docs
+# for top 50 docs
 calculate_recall(no_of_top)
-
 
 np.mean(calculate_recall(no_of_top))
 
-
-# +
 def calculate_precision(k):
     """To generate list of precision values for each query for given value of k
     
@@ -558,8 +521,6 @@ def calculate_fscore(k):
 
         p = precision_vals[i]
         r = recall_vals[i]
-
-        # Avoid division by zero
         if (p + r) == 0:
             f1 = 0.0
         else:
@@ -569,14 +530,12 @@ def calculate_fscore(k):
 
     return fscore
 
-# for top 100 docs
+# for top 50 docs
 calculate_precision(no_of_top)
 
 # -
 np.mean(calculate_precision(no_of_top))
 
-
-#  
 """This cell might take about 40 seconds to run."""
 
 for t in top:
