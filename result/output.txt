@@ -164,8 +164,7 @@ TF: 0.011905 | IDF: 0.651897 | TF-IDF: 0.007761
 
 Term: theory
 TF: 0.011905 | IDF: 1.120258 | TF-IDF: 0.013336
-
-Term: empirical
+Term: empirical  
 TF: 0.011905 | IDF: 3.810954 | TF-IDF: 0.045369
 
 Term: specific
