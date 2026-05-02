@@ -1,4 +1,183 @@
-Documents in the rank list
+--- TF, IDF, TF-IDF for Document 0 ---
+
+Term: experimental
+TF: 0.035714 | IDF: 1.47975 | TF-IDF: 0.052848
+
+Term: investigation
+TF: 0.02381 | IDF: 1.68426 | TF-IDF: 0.040101
+
+Term: aerodynamics
+TF: 0.02381 | IDF: 4.026066 | TF-IDF: 0.095859
+
+Term: wing
+TF: 0.047619 | IDF: 1.824407 | TF-IDF: 0.086877
+
+Term: slipstream
+TF: 0.071429 | IDF: 4.472353 | TF-IDF: 0.319454
+
+Term: study
+TF: 0.011905 | IDF: 1.764303 | TF-IDF: 0.021004
+
+Term: propeller
+TF: 0.011905 | IDF: 4.026066 | TF-IDF: 0.047929
+
+Term: make
+TF: 0.02381 | IDF: 1.289104 | TF-IDF: 0.030693
+
+Term: order
+TF: 0.011905 | IDF: 1.956675 | TF-IDF: 0.023294
+
+Term: determine
+TF: 0.011905 | IDF: 1.723481 | TF-IDF: 0.020518
+
+Term: spanwise
+TF: 0.011905 | IDF: 3.986845 | TF-IDF: 0.047462
+
+Term: distribution
+TF: 0.011905 | IDF: 1.433801 | TF-IDF: 0.017069
+
+Term: lift
+TF: 0.047619 | IDF: 2.201516 | TF-IDF: 0.104834
+
+Term: increase
+TF: 0.011905 | IDF: 1.921932 | TF-IDF: 0.02288
+
+Term: due
+TF: 0.02381 | IDF: 2.275128 | TF-IDF: 0.05417
+
+Term: different
+TF: 0.035714 | IDF: 2.572113 | TF-IDF: 0.091861
+
+Term: angle
+TF: 0.011905 | IDF: 1.888355 | TF-IDF: 0.02248
+
+Term: attack
+TF: 0.011905 | IDF: 2.500009 | TF-IDF: 0.029762
+
+Term: free
+TF: 0.011905 | IDF: 1.85587 | TF-IDF: 0.022094
+
+Term: stream
+TF: 0.011905 | IDF: 1.756004 | TF-IDF: 0.020905
+
+Term: velocity
+TF: 0.011905 | IDF: 1.48604 | TF-IDF: 0.017691
+
+Term: ratio
+TF: 0.011905 | IDF: 1.557966 | TF-IDF: 0.018547
+
+Term: result
+TF: 0.011905 | IDF: 0.718447 | TF-IDF: 0.008553
+
+Term: intend
+TF: 0.011905 | IDF: 4.760035 | TF-IDF: 0.056667
+
+Term: part
+TF: 0.02381 | IDF: 2.572113 | TF-IDF: 0.061241
+
+Term: evaluation
+TF: 0.02381 | IDF: 3.949105 | TF-IDF: 0.094026
+
+Term: basis
+TF: 0.011905 | IDF: 3.010835 | TF-IDF: 0.035843
+
+Term: theoretical
+TF: 0.011905 | IDF: 1.860446 | TF-IDF: 0.022148
+
+Term: treatment
+TF: 0.011905 | IDF: 3.507272 | TF-IDF: 0.041753
+
+Term: problem
+TF: 0.011905 | IDF: 1.464198 | TF-IDF: 0.017431
+
+Term: comparative
+TF: 0.011905 | IDF: 5.299031 | TF-IDF: 0.063084
+
+Term: span
+TF: 0.011905 | IDF: 3.483741 | TF-IDF: 0.041473
+
+Term: load
+TF: 0.011905 | IDF: 2.013833 | TF-IDF: 0.023974
+
+Term: curve
+TF: 0.011905 | IDF: 2.440921 | TF-IDF: 0.029059
+
+Term: together
+TF: 0.011905 | IDF: 3.531369 | TF-IDF: 0.04204
+
+Term: support
+TF: 0.011905 | IDF: 3.010835 | TF-IDF: 0.035843
+
+Term: evidence
+TF: 0.011905 | IDF: 3.810954 | TF-IDF: 0.045369
+
+Term: show
+TF: 0.011905 | IDF: 1.133474 | TF-IDF: 0.013494
+
+Term: substantial
+TF: 0.011905 | IDF: 4.411728 | TF-IDF: 0.052521
+
+Term: increment
+TF: 0.02381 | IDF: 5.453182 | TF-IDF: 0.129838
+
+Term: produce
+TF: 0.011905 | IDF: 2.875494 | TF-IDF: 0.034232
+
+Term: destalling
+TF: 0.035714 | IDF: 6.146329 | TF-IDF: 0.219512
+
+Term: boundary
+TF: 0.011905 | IDF: 1.092209 | TF-IDF: 0.013002
+
+Term: layer
+TF: 0.011905 | IDF: 1.216663 | TF-IDF: 0.014484
+
+Term: control
+TF: 0.011905 | IDF: 3.150597 | TF-IDF: 0.037507
+
+Term: effect
+TF: 0.02381 | IDF: 0.996899 | TF-IDF: 0.023736
+
+Term: integrate
+TF: 0.011905 | IDF: 3.810954 | TF-IDF: 0.045369
+
+Term: remain
+TF: 0.011905 | IDF: 3.313116 | TF-IDF: 0.039442
+
+Term: subtract
+TF: 0.011905 | IDF: 6.146329 | TF-IDF: 0.073171
+
+Term: find
+TF: 0.011905 | IDF: 1.464198 | TF-IDF: 0.017431
+
+Term: agree
+TF: 0.011905 | IDF: 3.21959 | TF-IDF: 0.038328
+
+Term: well
+TF: 0.011905 | IDF: 2.057556 | TF-IDF: 0.024495
+
+Term: potential
+TF: 0.011905 | IDF: 3.184499 | TF-IDF: 0.037911
+
+Term: flow
+TF: 0.011905 | IDF: 0.651897 | TF-IDF: 0.007761
+
+Term: theory
+TF: 0.011905 | IDF: 1.120258 | TF-IDF: 0.013336
+
+Term: empirical
+TF: 0.011905 | IDF: 3.810954 | TF-IDF: 0.045369
+
+Term: specific
+TF: 0.011905 | IDF: 3.20189 | TF-IDF: 0.038118
+
+Term: configuration
+TF: 0.011905 | IDF: 2.838222 | TF-IDF: 0.033788
+
+Term: experiment
+TF: 0.011905 | IDF: 2.261335 | TF-IDF: 0.026921
+
+Top 10 documents in the rank list
 Query: 1         Pr: 0.7         Re: 0.2414      F1: 0.359
 Query: 2         Pr: 0.4         Re: 0.16        F1: 0.2286
 Query: 3         Pr: 0.8         Re: 0.8889      F1: 0.8421
