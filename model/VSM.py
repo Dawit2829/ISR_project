@@ -404,8 +404,6 @@ def list_of_docs(k):
         
     return cos_sims
 
-
-
 #to get list of all documents
 no_of_top= 0
 list_of_docs(no_of_top)
