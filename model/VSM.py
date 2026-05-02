@@ -38,7 +38,7 @@ stop_list = set(stopwords.words('english'))
 # +
 # Declaring variables for file path
 in_path = '.'
-doc_source = 'cran.all.1400.txt'
+doc_source = '../dataset/cran.all.1400.txt'
 out_path = 'preprocessed_cranfieldDocs'
 
 # Declaring variables for query files
@@ -58,7 +58,7 @@ st = PorterStemmer()
 # Initializing regex to remove words with one or two characters length
 shortword = re.compile(r'\W*\b\w{1,2}\b')
 
-# ## Preprocessing the documents and queries file
+#  Preprocessing the documents and queries file
 
 def tokenize(data):
     """Preprocesses the string given as input. Converts to lower case,
@@ -188,8 +188,6 @@ def parse_cranfield_queries(filepath):
 
     return queries
 
-
-# +
 # Preprocessing all the documents in the Cranfield dataset
 
 """This cell might take about 20 seconds to run."""
@@ -204,7 +202,6 @@ for doc in docs:
     with open(outfilepath, 'w', encoding='utf-8') as outfile:
         outfile.write(preprocessed_text)
 
-# +
 # Preprocessing the queries.txt file
 queries_data = parse_cranfield_queries(query)
 queries = []
@@ -218,21 +215,16 @@ with open(preproc_query, 'w', encoding='utf-8') as new_q:
         else:
             new_q.write(query_tokens)
 
-# +
 # The corpus is already loaded into all_docs from the Cranfield parser above.
 # The preprocessed files in out_path were written for inspection only.
-
-# -
 
 # total number of documents is 1400
 no_of_docs = len(all_docs)
 print(no_of_docs)
 
-# # Task 1
 
-# ## Calculating df values for each term in the vocabulary
+#  Calculating df values for each term in the vocabulary
 
-# +
 # create a dictionary of key-value pairs where tokens are keys and their occurence in the corpus the value
 DF = {}
 
@@ -257,9 +249,6 @@ print(vocab_size)
 vocab = [term for term in DF]
 print(vocab)
 
-# ## Calculating tf-idf values for each term in the vocabulary
-
-# +
 doc = 0
 
 # creating dictionary to store tf-idf values for each term in the vocabulary
@@ -286,14 +275,27 @@ for i in range(no_of_docs):
         tf_idf[doc, token] = tf*idf
 
     doc += 1
-# -
 
-# print(tf_idf)
-tf_idf
+doc_id_to_inspect = 0   # change this to any document index
+
+tokens = all_docs[doc_id_to_inspect].split()
+counter = Counter(tokens)
+words_count = len(tokens)
+
+print(f"\n--- TF, IDF, TF-IDF for Document {doc_id_to_inspect} ---\n")
+
+for token in counter:
+    tf = counter[token] / words_count
+    df = DF[token]
+    idf = np.log((no_of_docs + 1) / (df + 1))
+    tfidf = tf * idf
+
+    print(f"Term: {token}")
+    print(f"TF: {round(tf, 6)} | IDF: {round(idf, 6)} | TF-IDF: {round(tfidf, 6)}\n")
+
 
 # ## Forming document vectors using the tf-idf values
 
-# +
 # initializing empty vector of vocabulary size
 D = np.zeros((no_of_docs, vocab_size))
 
@@ -301,11 +303,9 @@ D = np.zeros((no_of_docs, vocab_size))
 for i in tf_idf:
     ind = vocab.index(i[1])
     D[i[0]][ind] = tf_idf[i]
-# -
 
 # len(D)
 print(D)
-
 
 def gen_vector(tokens):
     """To create a vector (with repsect to the vocabulary) of the tokens passed as input
