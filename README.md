@@ -41,9 +41,10 @@ This repository contains an implementation of a Vector Space Model (VSM) for the
    python VSM.py
    ```
 
-4. The metrics output will be saved to `result.txt`.
+4. The metrics output will be saved to `output.txt`.
 
 ## Notes
 
 - The script preprocesses text, computes TF-IDF weights, ranks documents using cosine similarity, and evaluates retrieval performance.
 - `result.txt` contains precision, recall and fi score values formatted to five decimal places.
+# 
