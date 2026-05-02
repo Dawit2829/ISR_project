@@ -28,7 +28,6 @@ import nltk
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
-nltk.download('averaged_perceptron_tagger')
 nltk.download('averaged_perceptron_tagger_eng')
 import math as m 
 from collections import Counter
@@ -53,7 +52,6 @@ preproc_query = 'preprocessed_cranfieldDocs/preprocessed_queries.txt'
 
 # Declaring variable for file with query relevance values
 relevance = 'Dataset/cranqrel.txt'
-
 # Checking if the preprocessed docs folder exists already
 if not os.path.isdir(out_path):
     os.mkdir(out_path)
