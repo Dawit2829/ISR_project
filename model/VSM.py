@@ -26,16 +26,21 @@ import numpy as np
 import re # for regular expressions
 import nltk
 nltk.download('stopwords') 
+nltk.download('wordnet')
+nltk.download('omw-1.4')
+nltk.download('averaged_perceptron_tagger')
 import math as m 
 from collections import Counter
-from bs4 import BeautifulSoup 
-from nltk.stem import PorterStemmer 
+from bs4 import BeautifulSoup
+from nltk.stem import WordNetLemmatizer
+from nltk import pos_tag
+from nltk.corpus import wordnet
 from nltk.corpus import stopwords 
 stop_list = set(stopwords.words('english'))
 # sorted(stop_list)
 
 
-# +
+#
 # Declaring variables for file path
 in_path = '.'
 doc_source = 'Dataset/cran.all.1400.txt'
@@ -52,14 +57,21 @@ relevance = 'Dataset/cranqrel.txt'
 if not os.path.isdir(out_path):
     os.mkdir(out_path)
 
-# Initiallizing Porter Stemmer object
-st = PorterStemmer()
+# Initializing lemmatizer object
+lemmatizer = WordNetLemmatizer()
 
 # Initializing regex to remove words with one or two characters length
-shortword = re.compile(r'\W*\b\w{1,2}\b')
-
-#  Preprocessing the documents and queries file
-
+shortword = re.compile(r'\b\w{1,2}\b')
+def get_wordnet_pos(tag):
+    if tag.startswith('J'):
+        return wordnet.ADJ
+    elif tag.startswith('V'):
+        return wordnet.VERB
+    elif tag.startswith('N'):
+        return wordnet.NOUN
+    elif tag.startswith('R'):
+        return wordnet.ADV
+    return wordnet.NOUN
 def tokenize(data):
     """Preprocesses the string given as input. Converts to lower case,
     removes the punctuations and numbers, splits on whitespaces, 
@@ -85,20 +97,23 @@ def tokenize(data):
     # removing stop words from the tokens
     clean_tokens = [word for word in tokens if word not in stop_list]
 
-    # stemming the tokens
-    stem_tokens = [st.stem(word) for word in clean_tokens]
-
+    # pos tagging for lemmatization
+    pos_tags = pos_tag(clean_tokens)
+    lemma_tokens = [
+        lemmatizer.lemmatize(word, get_wordnet_pos(tag))
+        for word, tag in pos_tags
+]
     # checking for stopwords again
-    clean_stem_tokens = [word for word in stem_tokens if word not in stop_list]
-
+    clean_lemma_tokens = [word for word in lemma_tokens if word not in stop_list]
     # converting list of tokens to string
-    clean_stem_tokens = ' '.join(map(str,  clean_stem_tokens))
+    clean_lemma_tokens = ' '.join(map(str,  clean_lemma_tokens))
 
     # removing tokens with one or two characters length
-    clean_stem_tokens = shortword.sub('', clean_stem_tokens)
+    clean_lemma_tokens = shortword.sub('', clean_lemma_tokens)
 
-    return clean_stem_tokens
+    clean_lemma_tokens = re.sub(r'\s+', ' ', clean_lemma_tokens).strip()
 
+    return clean_lemma_tokens
 def extractTokens(beautSoup, tag):
     """Extract tokens of the text between a specific SGML <tag>. The function
     calls tokenize() function to generate tokens from the text.
